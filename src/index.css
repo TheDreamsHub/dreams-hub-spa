@@ -1,0 +1,33 @@
+@import url(./assets/styles/fonts.css);
+@import url(./assets/styles/animation.css);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-h-screen w-screen overflow-x-hidden overflow-y-auto font;
+}
+
+/* range input custom style */
+input[type="range"]::-webkit-slider-thumb {
+  @apply bg-primary hover:ring-white h-5 w-5 cursor-pointer appearance-none rounded-full ring-2 ring-transparent ring-opacity-30 transition-all duration-200;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  @apply bg-primary;
+}
+
+.hidden-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hidden-scrollbar::-webkit-scrollbar {
+  display: none;
+}

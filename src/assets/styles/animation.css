@@ -1,0 +1,383 @@
+.animation-x {
+  animation: MoveLeftRight linear infinite;
+}
+
+.animation-y {
+  animation: MoveUpDown linear infinite;
+}
+
+.-animation-x {
+  animation: MoveRightLeft linear infinite;
+}
+
+.-animation-y {
+  animation: MoveDownUp linear infinite;
+}
+
+.animation-duration-300 {
+  animation-duration: 300ms;
+}
+
+.animation-duration-400 {
+  animation-duration: 400ms;
+}
+
+.animation-duration-500 {
+  animation-duration: 500ms;
+}
+
+.animation-duration-600 {
+  animation-duration: 600ms;
+}
+
+.animation-duration-700 {
+  animation-duration: 700ms;
+}
+
+.animation-duration-800 {
+  animation-duration: 800ms;
+}
+
+.animation-duration-900 {
+  animation-duration: 900ms;
+}
+
+.animation-duration-1000 {
+  animation-duration: 1000ms;
+}
+
+.animation-duration-1100 {
+  animation-duration: 1100ms;
+}
+
+.animation-duration-1200 {
+  animation-duration: 1200ms;
+}
+
+.animation-duration-1300 {
+  animation-duration: 1300ms;
+}
+
+.animation-duration-1400 {
+  animation-duration: 1400ms;
+}
+
+.animation-duration-3000 {
+  animation-duration: 3000ms;
+}
+
+.animation-duration-4000 {
+  animation-duration: 4000ms;
+}
+
+.animation-duration-5000 {
+  animation-duration: 5000ms;
+}
+
+.animation-duration-6000 {
+  animation-duration: 6000ms;
+}
+
+.animation-duration-7000 {
+  animation-duration: 7000ms;
+}
+
+.animation-duration-8000 {
+  animation-duration: 8000ms;
+}
+
+.animation-duration-9000 {
+  animation-duration: 9000ms;
+}
+
+.animation-duration-10000 {
+  animation-duration: 10000ms;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50%,
+  55% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes MoveLeftRight {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50%,
+  55% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes MoveDownUp {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50%,
+  55% {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes MoveRightLeft {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50%,
+  55% {
+    transform: translateX(10px);
+  }
+}
+
+#hero {
+  --glitch-duration: 3s;
+}
+
+#hero > img {
+  transform: translate(-50%, -50%);
+}
+
+#hero > img:nth-child(1) {
+  animation: glitch1 var(--glitch-duration) infinite steps(1, end);
+}
+#hero > img:nth-child(2) {
+  animation: glitch2 var(--glitch-duration) infinite steps(1, end);
+}
+#hero > img:nth-child(3) {
+  animation: glitch3 var(--glitch-duration) infinite steps(1, end);
+}
+#hero > img:nth-child(4) {
+  animation: glitch4 var(--glitch-duration) infinite steps(1, end);
+}
+#hero > img:nth-child(5) {
+  animation: glitch5 var(--glitch-duration) infinite steps(1, end);
+}
+
+@keyframes glitch1 {
+  20% {
+    clip-path: polygon(0 0%, 100% 0%, 100% 33%, 0 33%);
+    transform: translate(-50%, -50%);
+  }
+  30% {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100%, 0);
+    transform: translate(-50%, -50%);
+  }
+  47% {
+    transform: translate(-45%, -45%);
+  }
+  48% {
+    transform: translate(-50%, -50%);
+  }
+  49% {
+    transform: translate(-55%, -45%);
+  }
+  50% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes glitch2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    clip-path: polygon(0 40%, 100% 40%, 100% 60%, 0% 60%);
+    transform: translate(-50%, -50%);
+  }
+  21% {
+    transform: translate(-46%, -46%);
+  }
+  22% {
+    transform: translate(-54%, -54%);
+  }
+  30% {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100%, 0);
+    transform: translate(-50%, -50%);
+  }
+  35% {
+    transform: translate(-45%, -55%);
+  }
+  36% {
+    transform: translate(-50%, -50%);
+  }
+  37% {
+    transform: translate(-40%, -45%);
+  }
+  38% {
+    transform: translate(-50%, -50%);
+  }
+  50% {
+    transform: translate(-45%, -55%);
+  }
+  51% {
+    transform: translate(-50%, -60%);
+  }
+  52% {
+    transform: translate(-45%, -50%);
+  }
+  53% {
+    transform: translate(-50%, -50%);
+  }
+  71% {
+    transform: translate(-40%, -60%);
+  }
+  72% {
+    transform: translate(-45%, -50%);
+  }
+  73% {
+    transform: translate(-40%, -50%);
+  }
+  77% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes glitch3 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0% 100%);
+    transform: translate(-50%, -50%);
+  }
+  30% {
+    transform: translate(-40%, -40%);
+  }
+  31% {
+    transform: translate(-50%, -50%);
+  }
+  35% {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100%, 0);
+    transform: translate(-50%, -50%);
+  }
+  45% {
+    transform: translate(-60%, -60%);
+  }
+  46% {
+    transform: translate(-50%, -50%);
+  }
+  47% {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100%, 0);
+    transform: translate(-50%, -50%);
+  }
+  69% {
+    transform: translate(-40%, -40%);
+  }
+  71% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes glitch4 {
+  0% {
+    opacity: 0;
+  }
+  22% {
+    opacity: 1;
+    clip-path: polygon(0 32%, 100% 32%, 100% 41%, 0% 41%);
+    transform: translate(-48%, -50%);
+  }
+  24% {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100%, 0);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes glitch5 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    clip-path: polygon(0 59%, 100% 59%, 100% 71%, 0% 71%);
+    transform: translate(-52%, -50%);
+  }
+  25% {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100%, 0);
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* START - fade in */
+.fade-in {
+  -webkit-animation: fadein 1s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 1s;
+  /* Internet Explorer */
+  -o-animation: fadein 1s;
+  /* Opera < 12.1 */
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+/* END - fade in */
+
+.color-spin-animation::after {
+  animation: colorSpin 10s linear infinite;
+}
+
+@keyframes colorSpin {
+  25% {
+    transform: translateY(-75%);
+  }
+  50% {
+    transform: translate(-75%, -75%);
+  }
+  75% {
+    transform: translate(-75%, 0);
+  }
+}
