@@ -1,3 +1,5 @@
+import { TbBrandTwitter } from "@react-icons/all-files/tb/TbBrandTwitter";
+import { TbBrandLinkedin } from "@react-icons/all-files/tb/TbBrandLinkedin";
 import logo from "../../assets/icons/full-logo.svg";
 
 import { useTranslation } from "react-i18next";
@@ -7,14 +9,23 @@ export default function Footer() {
 
   return (
     <>
-      <div className="shadow-section w-full">
-        <div className="xl:max-w-7xl sm:max-w-2xl mx-auto w-full max-w-xs py-16">
-          <div className="grid xl:grid-cols-4 grid-cols-2 items-start justify-between gap-10">
-            <div>
+      <div className="bg-[#0E101E] w-full">
+        <div className="xl:max-w-7xl sm:max-w-2xl mx-auto w-full max-w-xs py-2">
+          <div className="flex flex-col-reverse sm:flex-row items-center w-full justify-between gap-10">
+            <p className="text-sm text-white">
+              جميع الحقوق محفوظة لشركة تجمع الأحلام 2023
+            </p>
+            <div className="flex items-center gap-4">
+              <div className="rounded-full bg-primary-800 w-10 h-10 flex items-center justify-center text-primary-100">
+                <TbBrandLinkedin size={20} />
+              </div>
+              <div className="rounded-full bg-primary-800 w-10 h-10 flex items-center justify-center text-primary-100">
+                <TbBrandTwitter size={20} />
+              </div>
               <img
                 src={logo}
                 alt={t("components.Footer.go")!}
-                className="w-28 h-auto"
+                className="w-20 h-auto"
               />
             </div>
           </div>

@@ -1,7 +1,7 @@
-import { ContactTypeEnum } from "../enums/contact.enum";
-
 export type ContactFormType = {
-  type: ContactTypeEnum;
-  subject: string;
-  [body: string]: string;
+  company_name: string;
+  company_owner: string;
+  owner_mobile: string;
+  owner_email: string;
+  [service_type: string]: string;
 };

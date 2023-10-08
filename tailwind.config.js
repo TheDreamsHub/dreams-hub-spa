@@ -52,10 +52,17 @@ module.exports = {
       backgroundImage: {
         hero: "url('./assets/images/hero-vector.png')",
         us: "url('./assets/images/us-vector.png')",
+        values: "url('./assets/images/values-bg.png')",
+        monitor: "url('./assets/icons/monitor.png')",
+        "monitor-active": "url('./assets/icons/monitor-active.png')",
+        member: "url('./assets/icons/member.png')",
+        "member-active": "url('./assets/icons/member-active.png')",
       },
       backgroundSize: {
         "hero-size": "100vw",
         "us-size": "600px",
+        "monitor-size": "70px",
+        "member-size": "70px",
       },
     },
   },

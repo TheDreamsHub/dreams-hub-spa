@@ -1,16 +1,12 @@
 import { useFormik } from "formik";
 import { useState } from "react";
 import { validationSchema } from "./conatct-us-form-contanier.validation";
-import { useTranslation } from "react-i18next";
 import {
   DirectionEnum,
   InputField,
 } from "../../components/input-field/input-field";
 import ComponentLoader from "../../components/component-loader/component-loader";
-import { LanguagesEnum } from "../../core/enums/languages.enum";
-import { ContactTypeEnum } from "../../core/enums/contact.enum";
 import { ContactFormType } from "../../core/types/contact.types";
-import { TextAreaField } from "../../components/textarea-field/textarea-field";
 
 export type NetlifyType = ContactFormType & {
   "form-name": string;
@@ -18,12 +14,14 @@ export type NetlifyType = ContactFormType & {
 
 export default function ContactUsFormContainer() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const { i18n, t } = useTranslation();
+  const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
 
   const initalFormData: ContactFormType = {
-    type: ContactTypeEnum.INDIVIDUAL,
-    subject: "",
-    body: "",
+    company_name: "",
+    company_owner: "",
+    owner_mobile: "",
+    owner_email: "",
+    service_type: "",
   };
 
   const encode = (data: NetlifyType) => {
@@ -45,6 +43,7 @@ export default function ContactUsFormContainer() {
       }),
     }).finally(() => {
       setIsLoading(false);
+      setIsSubmitted(true);
     });
   };
 
@@ -60,107 +59,119 @@ export default function ContactUsFormContainer() {
   });
 
   return (
-    <div className="w-full bg-white dark:bg-black/60 shadow-section rounded-3xl p-6 sm:p-12">
-      <form
-        onSubmit={formik.handleSubmit}
-        data-netlify="true"
-        name="contact-us"
-      >
-        <input type="hidden" name="contact-us" value="contact-us" />
-        <div className="flex flex-col items-center justify-center w-full gap-4">
-          <h2 className="text-center dark:text-white text-[#6C6868] font-light text-xs sm:text-3xl">
-            {t("container.ContactUsFormContainer.title")}
-          </h2>
-          <div className="w-full">
-            <label className="text-[#6C6868] font-light mb-2 block dark:text-white sm:text-base text-xs">
-              {t("container.ContactUsFormContainer.type")}
-            </label>
-            <div className="grid grid-cols-2 gap-3 items-center w-full mt-4">
-              <div
-                className={`text-center rounded-[42px] transition-all duration-150 cursor-pointer font-light text-xs sm:text-xl p-2 w-full ${
-                  formik.values.type === ContactTypeEnum.INDIVIDUAL
-                    ? "text-white bg-accent"
-                    : "text-muted bg-[#E8ECF2] dark:bg-white/20 dark:text-white"
-                }`}
-                onClick={() =>
-                  formik.setFieldValue("type", ContactTypeEnum.INDIVIDUAL)
-                }
-              >
-                {t("container.ContactUsFormContainer.INDIVIDUAL")}
-              </div>
-              <div
-                className={`text-center rounded-[42px] transition-all duration-150 cursor-pointer font-light text-xs sm:text-xl p-2 w-full ${
-                  formik.values.type === ContactTypeEnum.COMPANY
-                    ? "text-white bg-secondary"
-                    : "text-muted bg-[#E8ECF2] dark:bg-white/20 dark:text-white"
-                }`}
-                onClick={() =>
-                  formik.setFieldValue("type", ContactTypeEnum.COMPANY)
-                }
-              >
-                {t("container.ContactUsFormContainer.COMPANY")}
-              </div>
-            </div>
-          </div>
-          <div className="w-full">
-            <InputField
-              aria-label={t("container.ContactUsFormContainer.subject")!}
-              name="subject"
-              value={formik.values.subject ?? ""}
-              onChange={formik.handleChange}
-              dir={
-                i18n.language === LanguagesEnum.AR
-                  ? DirectionEnum.RTL
-                  : DirectionEnum.LTR
-              }
-              className="font-light !text-sm"
-            />
-            {formik.touched.subject && formik.errors.subject && (
-              <p className="text-danger font-light text-sm -mt-5 mb-5">
-                {formik.errors.subject}
-              </p>
-            )}
-          </div>
-          <div className="w-full">
-            <TextAreaField
-              aria-label={t("container.ContactUsFormContainer.body")!}
-              name="body"
-              value={formik.values.body ?? ""}
-              onChange={formik.handleChange}
-              dir={
-                i18n.language === LanguagesEnum.AR
-                  ? DirectionEnum.RTL
-                  : DirectionEnum.LTR
-              }
-              className="font-light !text-sm"
-              rows={10}
-            />
-            {formik.touched.body && formik.errors.body && (
-              <p className="text-danger font-light text-sm -mt-5 mb-5">
-                {formik.errors.body}
-              </p>
-            )}
-          </div>
-
-          <div className="mt-4 flex w-full justify-center gap-2">
-            <button
-              type="submit"
-              disabled={isLoading}
-              className="text-white text-sm sm:text-2xl text-center w-2/3 font-light bg-primary rounded-[38px] px-10 py-2"
-            >
-              <div className="flex items-center justify-center cursor-pointer">
-                {isLoading && (
-                  <div className="w-6">
-                    <ComponentLoader />
-                  </div>
-                )}
-                {t("container.ContactUsFormContainer.cta")}
-              </div>
-            </button>
+    <div className="w-full bg-primary-50 rounded-3xl p-6 sm:p-12">
+      {isSubmitted ? (
+        <div className="mx-auto sm:w-[670px] w-full p-3 sm:p-12 bg-primary-50 rounded-xl backdrop-blur-lg">
+          <div>
+            <p className="text-accent-700 text-center text-lg font-bold mb-2">
+              شكرًا على تواصلك معنا، سيتم التواصل معكم في أقرب وقت ممكن
+            </p>
           </div>
         </div>
-      </form>
+      ) : (
+        <form
+          onSubmit={formik.handleSubmit}
+          data-netlify="true"
+          name="contact-us"
+        >
+          <input type="hidden" name="contact-us" value="contact-us" />
+          <div className="flex flex-col items-center justify-center w-full gap-4">
+            <div className="w-full">
+              <InputField
+                aria-label="اسم الشركة"
+                name="company_name"
+                value={formik.values.company_name ?? ""}
+                onChange={formik.handleChange}
+                dir={DirectionEnum.RTL}
+                className="font-light !text-sm"
+              />
+              {formik.touched.company_name && formik.errors.company_name && (
+                <p className="text-red-500 font-light text-sm -mt-5 mb-5">
+                  {formik.errors.company_name}
+                </p>
+              )}
+            </div>
+            <div className="w-full">
+              <InputField
+                aria-label="الاسم الثلاثي"
+                name="company_owner"
+                value={formik.values.company_owner ?? ""}
+                onChange={formik.handleChange}
+                dir={DirectionEnum.RTL}
+                className="font-light !text-sm"
+              />
+              {formik.touched.company_owner && formik.errors.company_owner && (
+                <p className="text-red-500 font-light text-sm -mt-5 mb-5">
+                  {formik.errors.company_owner}
+                </p>
+              )}
+            </div>
+            <div className="w-full">
+              <InputField
+                aria-label="رقم التواصل"
+                name="owner_mobile"
+                value={formik.values.owner_mobile ?? ""}
+                onChange={formik.handleChange}
+                dir={DirectionEnum.RTL}
+                className="font-light !text-sm"
+              />
+              {formik.touched.owner_mobile && formik.errors.owner_mobile && (
+                <p className="text-red-500 font-light text-sm -mt-5 mb-5">
+                  {formik.errors.owner_mobile}
+                </p>
+              )}
+            </div>
+            <div className="w-full">
+              <InputField
+                aria-label="البريد الالكتروني"
+                name="owner_email"
+                type="email"
+                value={formik.values.owner_email ?? ""}
+                onChange={formik.handleChange}
+                dir={DirectionEnum.RTL}
+                className="font-light !text-sm"
+              />
+              {formik.touched.owner_email && formik.errors.owner_email && (
+                <p className="text-red-500 font-light text-sm -mt-5 mb-5">
+                  {formik.errors.owner_email}
+                </p>
+              )}
+            </div>
+            <div className="w-full">
+              <InputField
+                aria-label="الخدمة المطلوبة"
+                name="service_type"
+                value={formik.values.service_type ?? ""}
+                onChange={formik.handleChange}
+                dir={DirectionEnum.RTL}
+                className="font-light !text-sm"
+              />
+              {formik.touched.service_type && formik.errors.service_type && (
+                <p className="text-red-500 font-light text-sm -mt-5 mb-5">
+                  {formik.errors.service_type}
+                </p>
+              )}
+            </div>
 
+            <div className="mt-4 flex w-full justify-end gap-2">
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="text-primary-50 bg-primary hover:bg-primary-700 transition-all duration-300 text-base font-bold py-3.5 px-4 flex items-center justify-center w-fit gap-1 rounded-lg"
+              >
+                <div className="flex items-center justify-center cursor-pointer">
+                  {isLoading && (
+                    <div className="w-6">
+                      <ComponentLoader />
+                    </div>
+                  )}
+                  تقديم
+                </div>
+              </button>
+            </div>
+          </div>
+        </form>
+      )}
     </div>
   );
 }

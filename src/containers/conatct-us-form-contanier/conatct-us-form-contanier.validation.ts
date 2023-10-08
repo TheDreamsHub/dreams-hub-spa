@@ -3,10 +3,10 @@ import * as Yup from "yup";
 
 export const validationSchema = () => {
   return Yup.object().shape({
-    type: Yup.string().required(t("app.shared.form.errors.required")!),
-    subject: Yup.string().required(t("app.shared.form.errors.required")!),
-    body: Yup.string()
-      .required(t("app.shared.form.errors.required")!)
-      .max(250, t("app.shared.form.errors.max")!),
+    company_name: Yup.string().required(t("app.shared.form.errors.required")!),
+    company_owner: Yup.string().required(t("app.shared.form.errors.required")!),
+    owner_mobile: Yup.string().required(t("app.shared.form.errors.required")!),
+    owner_email: Yup.string().required(t("app.shared.form.errors.required")!),
+    service_type: Yup.string().required(t("app.shared.form.errors.required")!),
   });
 };
