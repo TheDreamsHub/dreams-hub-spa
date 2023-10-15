@@ -16,10 +16,25 @@ export default function Footer() {
               جميع الحقوق محفوظة لشركة تجمع الأحلام 2023
             </p>
             <div className="flex items-center gap-4">
-              <div className="rounded-full bg-primary-800 w-10 h-10 flex items-center justify-center text-primary-100">
+              <div
+                onClick={() =>
+                  window.open(
+                    "https://www.linkedin.com/company/2030-dreams-hub/?viewAsMember=true",
+                    "_blank"
+                  )
+                }
+                className="rounded-full bg-primary-800 w-10 h-10 flex items-center justify-center text-primary-100"
+              >
                 <TbBrandLinkedin size={20} />
               </div>
-              <div className="rounded-full bg-primary-800 w-10 h-10 flex items-center justify-center text-primary-100">
+              <div 
+                onClick={() =>
+                  window.open(
+                    "https://twitter.com/dreams_hub_com",
+                    "_blank"
+                  )
+                }
+              className="rounded-full bg-primary-800 w-10 h-10 flex items-center justify-center text-primary-100">
                 <TbBrandTwitter size={20} />
               </div>
               <img
