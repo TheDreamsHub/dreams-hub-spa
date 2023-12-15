@@ -28,7 +28,7 @@ export default function HomePage() {
           <div>
             <h4 className="text-2xl text-secondary mb-2">من نحن ؟</h4>
             <p className="text-2xl text-primary-50">
-              تجمع الأحلام مؤسسة سعودية تعمل على تصميم وتطوير البرمجيات وتقديم
+              تجمع الأحلام شركة سعودية تعمل على تصميم وتطوير البرمجيات وتقديم
               الحلول والخدمات التقنية للمؤسسات والشركات الناشئة.
             </p>
             <h4 className="text-2xl text-secondary mt-6 mb-2">رؤيتنا ؟</h4>

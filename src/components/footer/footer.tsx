@@ -30,7 +30,7 @@ export default function Footer() {
               <div 
                 onClick={() =>
                   window.open(
-                    "https://twitter.com/dreams_hub_com",
+                    "https://twitter.com/DreamsHub2030",
                     "_blank"
                   )
                 }
