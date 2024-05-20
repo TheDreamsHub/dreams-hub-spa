@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="xl:max-w-7xl sm:max-w-2xl mx-auto w-full max-w-xs py-2">
           <div className="flex flex-col-reverse sm:flex-row items-center w-full justify-between gap-10">
             <p className="text-sm text-white">
-              جميع الحقوق محفوظة لشركة تجمع الأحلام 2023
+              جميع الحقوق محفوظة لشركة تجمع الأحلام {new Date().getFullYear()}
             </p>
             <div className="flex items-center gap-4">
               <div

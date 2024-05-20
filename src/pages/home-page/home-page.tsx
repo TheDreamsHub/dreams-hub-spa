@@ -7,6 +7,8 @@ import ValuesSectionContainer from "../../containers/values-section-container/va
 import { useNavigate } from "react-router-dom";
 import { appRoutesObj } from "../../app.paths";
 import { TbArrowLeft } from "@react-icons/all-files/tb/TbArrowLeft";
+import TeamMemberImage from "../../assets/images/team-member.image";
+import MonitorImage from "../../assets/images/monitor.image";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -64,19 +66,25 @@ export default function HomePage() {
         </h4>
         <div className="grid sm:grid-cols-3 grid-cols-1 justify-between gap-4 w-full">
           <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-4 pl-4">
-            <div className="w-20 h-full transition-all duration-200 bg-no-repeat bg-monitor-size bg-right bg-monitor group-hover:bg-monitor-active"></div>
+            <div className="w-12 group h-full my-auto flex items-center">
+              <MonitorImage />
+            </div>
             <p className="text-primary-50 font-bold text-lg">
               تصميم وتطوير المواقع والتطبيقات الإلكترونية
             </p>
           </div>
           <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-4 pl-4">
-            <div className="w-20 h-full transition-all duration-200 bg-no-repeat bg-monitor-size bg-right bg-monitor group-hover:bg-monitor-active"></div>
+            <div className="w-12 group h-full my-auto flex items-center">
+              <MonitorImage />
+            </div>
             <p className="text-primary-50 font-bold text-lg">
               خدمات الصيانة والدعم التقني
             </p>
           </div>
           <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-4 pl-4">
-            <div className="w-20 h-full transition-all duration-200 bg-no-repeat bg-monitor-size bg-right bg-monitor group-hover:bg-monitor-active"></div>
+            <div className="w-12 group h-full my-auto flex items-center">
+              <MonitorImage />
+            </div>
             <p className="text-primary-50 font-bold text-lg">
               الاستشارات التقنية
             </p>
@@ -104,8 +112,10 @@ export default function HomePage() {
           فريقنا
         </h4>
         <div className="grid sm:grid-cols-3 grid-cols-1 justify-between gap-4 w-full">
-          <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-4 pl-4">
-            <div className="w-20 h-full transition-all duration-200 bg-no-repeat bg-member-size bg-right bg-member group-hover:bg-member-active"></div>
+          <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-8 pl-4">
+            <div className="w-14 group h-full my-auto flex items-center">
+              <TeamMemberImage />
+            </div>
             <div>
               <p className="transition-all mb-2 duration-200 text-primary-50 text-2xl group-hover:text-accent">
                 نايف الشهراني
@@ -115,8 +125,10 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-4 pl-4">
-            <div className="w-20 h-full transition-all duration-200 bg-no-repeat bg-member-size bg-right bg-member group-hover:bg-member-active"></div>
+          <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-8 pl-4">
+            <div className="w-14 group h-full my-auto flex items-center">
+              <TeamMemberImage />
+            </div>
             <div>
               <p className="transition-all mb-2 duration-200 text-primary-50 text-2xl group-hover:text-accent">
                 محمد الشيخ
@@ -126,8 +138,10 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-          <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-4 pl-4">
-            <div className="w-20 h-full transition-all duration-200 bg-no-repeat bg-member-size bg-right bg-member group-hover:bg-member-active"></div>
+          <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-8 pl-4">
+            <div className="w-14 group h-full my-auto flex items-center">
+              <TeamMemberImage />
+            </div>
             <div>
               <p className="transition-all mb-2 duration-200 text-primary-50 text-2xl group-hover:text-accent">
                 بدر الشهري
