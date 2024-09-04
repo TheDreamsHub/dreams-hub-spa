@@ -7,7 +7,6 @@ import ValuesSectionContainer from "../../containers/values-section-container/va
 import { useNavigate } from "react-router-dom";
 import { appRoutesObj } from "../../app.paths";
 import { TbArrowLeft } from "@react-icons/all-files/tb/TbArrowLeft";
-import TeamMemberImage from "../../assets/images/team-member.image";
 import MonitorImage from "../../assets/images/monitor.image";
 
 export default function HomePage() {
@@ -108,7 +107,7 @@ export default function HomePage() {
           alt="خدماتنا"
           className="mx-auto w-full hidden sm:block"
         />
-        <h4 className="text-2xl text-center text-secondary mb-16 -mt-4">
+        {/* <h4 className="text-2xl text-center text-secondary mb-16 -mt-4">
           فريقنا
         </h4>
         <div className="grid sm:grid-cols-3 grid-cols-1 justify-between gap-4 w-full">
@@ -151,7 +150,7 @@ export default function HomePage() {
               </p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="xl:max-w-7xl py-20 relative sm:max-w-2xl mx-auto w-full max-w-xs">
