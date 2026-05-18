@@ -2,12 +2,12 @@ import logo from "../../assets/icons/full-logo.svg";
 
 import dots from "../../assets/images/us-dots.svg";
 import titleVector from "../../assets/images/title-vector.png";
-import FeaturesSectionContainer from "../../containers/features-section-container/features-section-container";
 import ValuesSectionContainer from "../../containers/values-section-container/values-section-container";
+import PricingSectionContainer from "../../containers/pricing-section-container/pricing-section-container";
+import ProcessSectionContainer from "../../containers/process-section-container/process-section-container";
 import { useNavigate } from "react-router-dom";
 import { appRoutesObj } from "../../app.paths";
 import { TbArrowLeft } from "@react-icons/all-files/tb/TbArrowLeft";
-import MonitorImage from "../../assets/images/monitor.image";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -54,46 +54,9 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="xl:max-w-7xl py-20 relative sm:max-w-2xl mx-auto w-full max-w-xs">
-        <img
-          src={titleVector}
-          alt="خدماتنا"
-          className="mx-auto w-full hidden sm:block"
-        />
-        <h4 className="text-2xl text-center text-secondary mb-4 sm:mb-16 -mt-4">
-          خدماتنا:
-        </h4>
-        <div className="grid sm:grid-cols-3 grid-cols-1 justify-between gap-4 w-full">
-          <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-4 pl-4">
-            <div className="w-12 group h-full my-auto flex items-center">
-              <MonitorImage />
-            </div>
-            <p className="text-primary-50 font-bold text-lg">
-              تصميم وتطوير المواقع والتطبيقات الإلكترونية
-            </p>
-          </div>
-          <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-4 pl-4">
-            <div className="w-12 group h-full my-auto flex items-center">
-              <MonitorImage />
-            </div>
-            <p className="text-primary-50 font-bold text-lg">
-              خدمات الصيانة والدعم التقني
-            </p>
-          </div>
-          <div className="w-full bg-black/5 group h-32 rounded-2xl flex items-center gap-4 pl-4">
-            <div className="w-12 group h-full my-auto flex items-center">
-              <MonitorImage />
-            </div>
-            <p className="text-primary-50 font-bold text-lg">
-              الاستشارات التقنية
-            </p>
-          </div>
-        </div>
-      </div>
+      <PricingSectionContainer />
 
-      <div className="xl:max-w-7xl relative sm:max-w-2xl mx-auto w-full max-w-xs">
-        <FeaturesSectionContainer />
-      </div>
+      <ProcessSectionContainer />
 
       <div className="bg-values sm:h-[500px] flex w-full items-center justify-center bg-no-repeat bg-center bg-contain">
         <div className="xl:max-w-7xl relative sm:max-w-2xl mx-auto w-full max-w-xs">
